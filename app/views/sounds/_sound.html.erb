@@ -1,0 +1,18 @@
+<div id="<%= dom_id sound %>">
+  <p>
+    <strong>Name:</strong>
+    <%= sound.name %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= sound.description %>
+  </p>
+  <p>
+    <strong>File:</strong>
+    <%= audio_tag(url_for(sound.file), controls: true, id: "wave_audio", data: {
+    controller: "wave",
+    wave_url: url_for(sound.file)
+  }) %>
+  </p>
+  <canvas id="wave_canvas"></canvas>
+</div>
